@@ -1,0 +1,65 @@
+{
+	"miniprogramRoot": "only_u/",
+	"cloudfunctionRoot": "cloudfunctions/",
+	"setting": {
+		"urlCheck": true,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true
+	},
+	"appid": "wx850d925fbae1aebb",
+	"projectname": "only_u",
+	"libVersion": "2.2.5",
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"list": []
+		},
+		"miniprogram": {
+			"current": 3,
+			"list": [
+				{
+					"id": -1,
+					"name": "me",
+					"pathName": "pages/me/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "寻缘",
+					"pathName": "pages/score/activityList",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/me/message",
+					"pathName": "pages/me/message",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/me/index",
+					"pathName": "pages/me/index",
+					"scene": null
+				}
+			]
+		}
+	}
+}

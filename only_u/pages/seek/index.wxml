@@ -1,0 +1,68 @@
+<block wx:if="{{showLoading}}">
+  <view class='cu-load load-modal'>
+    <view class='cuIcon-loading2 text-{{skin}}'></view>
+    <view class='text-{{skin}}'>玩命加载中...</view>
+  </view>
+</block>
+<block wx:else>
+
+  <cu-custom bgColor="bg-gradual-{{skin}}">
+    <view slot="content">寻缘</view>
+  </cu-custom>
+
+  <view class="margin-bottom-xxl padding">
+
+    <!-- <swiper class="screen-swiper margin shadow" indicator-dots="{{false}}" autoplay="{{false}}">
+      <block wx:for="{{swiperList}}" wx:key="{{index}}">
+        <swiper-item>
+          <image src="{{item.url}}" class="slide-image" width="355" height="150" />
+
+
+        </swiper-item>
+      </block>
+    </swiper> -->
+
+    <view class="section bg-white radius shadow shadow-lg">
+      <movable-area class="area">
+        <movable-view class="mv" wx:for="{{content}}" wx:key="index" x="{{x}}" y="{{y}}" direction="all" bindchange="onChange" out-of-bounds="true" data-index="{{index}}" catch:touchend="tap">
+          <image animation="{{animationData}}" src="{{item.img}}" class="image"></image>
+          <view class="margin-left">
+            <view class="margin-top-sm">
+              <text class="text-orange text-lg ">馥钰</text>
+              <text class="margin-left cuIcon-female text-red"></text>
+            </view>
+
+            <view class="margin-top-sm">
+              <view class="cu-tag round bg-orange">高收入</view>
+              <view class="cu-tag round bg-yellow">高学历</view>
+              <view class="cu-tag round bg-olive">有房</view>
+              <view class="cu-tag round bg-cyan">有车</view>
+            </view>
+          </view>
+
+        </movable-view>
+
+      </movable-area>
+    </view>
+
+
+
+
+    <view class="margin grid col-2 text-center">
+
+      <view bindtap="next">
+        <view class="cu-avatar xl round margin-left bg-white">
+          <text class="cuIcon-close text-gray text-xsl text-shadow"></text>
+        </view>
+      </view>
+
+      <view bindtap="next">
+        <view class="cu-avatar xl round margin-left bg-white shadow" >
+          <!-- <text class="avatar-text">网络</text> -->
+          <text class="cuIcon-likefill text-red text-shadow"></text>
+        </view>
+      </view>
+    </view>
+
+  </view>
+</block>

@@ -1,0 +1,83 @@
+<block wx:if="{{showLoading}}">
+  <view class='cu-load load-modal'>
+    <view class='cuIcon-loading2 text-{{skin}}'></view>
+    <view class='text-{{skin}}'>玩命加载中...</view>
+  </view>
+</block>
+<block wx:else>
+  <cu-custom bgColor="bg-gradual-{{skin}}" isBack="{{true}}">
+    <view slot="backText">返回</view>
+    <view slot="content">动态详情</view>
+  </cu-custom>
+
+  <scroll-view scroll-y="{{modalName==null}}" class="page  {{modalName!=null?'show':''}} margin-bottom-xxl" bindscroll="scroll" bindscrolltolower="scrollToLower">
+    <view class="cu-timeline  text-lg padding-bottom-xs ">
+      <!-- <block wx:for="{{activityList}}" wx:key="{{index}}"> -->
+
+
+      <view class="cu-card dynamic {{isCard?'no-card':''}}">
+        <view class="cu-item shadow">
+          <view class="cu-list dynamic menu-avatar comment ">
+            <view class="cu-item">
+              <view class="cu-avatar round" style="background-image:url(https://ossweb-img.qq.com/images/lol/img/champion/Morgana.png);" bindtap="toPersonInfo" data-personId="{{1}}"></view>
+              <view class="content">
+                <view class="">
+                  <view class="text-grey" bindtap="toPersonInfo" data-personId="{{1}}">莫甘娜</view>
+                  <view class="right-top-zero text-gray">2019-08-21</view>
+                </view>
+
+                <view class="text-content text-df">
+                  凯尔，你被自己的光芒变的盲目。
+                </view>
+
+                <view class="grid flex-sub col-3 grid-square">
+                  <view class="bg-img" style="background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big10006.jpg);" wx:for="{{modalName!=null?9:1}}" wx:key="{{index}}">
+                  </view>
+                </view>
+
+                <view class="margin-top-sm text-gray">
+                  <text class="cuIcon-appreciatefill text-red"></text> 8
+                  <text class="cuIcon-messagefill text-gray margin-left-sm"></text> 9
+                </view>
+
+                <view class="bg-gray padding-sm radius margin-top-sm  text-sm">
+                <view class="flex">
+                    <text class="cuIcon-appreciatefill text-red"></text>
+                    <view class="text-grey text-df margin-left-xs" bindtap="toPersonInfo" data-personId="{{1}}">刘备</view>
+                    <view class="text-grey text-df margin-left-xs" bindtap="toPersonInfo" data-personId="{{1}}">关羽</view>
+                    <view class="text-grey text-df margin-left-xs" bindtap="toPersonInfo" data-personId="{{1}}">张飞</view>
+                  </view>
+                  <view class="flex" wx:for="{{modalName!=null?5:1}}" wx:key="{{index}}">
+                    <view class="text-grey text-df" bindtap="toPersonInfo" data-personId="{{1}}">凯尔：</view>
+                    <view class="flex-sub">妹妹，你在帮他们给黑暗找借口吗?</view>
+                  </view>
+                </view>
+
+              </view>
+            </view>
+
+          </view>
+        </view>
+      </view>
+
+      <!-- </block> -->
+
+      <!-- hasMore start -->
+      <view class='margin-tb'>
+        <block wx:if="{{hasMore}}">
+          <view class='cu-load'>
+            <view class='text-{{skin}}'>玩命加载中...</view>
+          </view>
+        </block>
+        <block wx:else>
+          <view class="flex justify-center text-gray">
+            <text>没有更多内容了</text>
+          </view>
+        </block>
+      </view>
+      <!-- hasMore end -->
+
+    </view>
+
+  </scroll-view>
+</block>

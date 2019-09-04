@@ -1,0 +1,45 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/home/home",
+    "pages/home/top",
+    "pages/person/info",
+    "pages/person/dynamic",
+    "pages/area/list",
+    "pages/area/top",
+    "pages/apply/activityList",
+    "pages/apply/activityDetail",
+    "pages/seek/index",
+    "pages/dynamic/list",
+    "pages/dynamic/detail",
+    "pages/chat/index",
+    "pages/chat/chat",
+    "pages/me/index",
+    "pages/me/dynamic",
+    "pages/me/message",
+    "pages/me/visit",
+    "pages/me/edit",
+    "pages/me/match",
+    "pages/me/love",
+    "pages/me/follow",
+    "pages/me/browse",
+    "pages/me/setting/index",
+    "pages/me/setting/background",
+    "pages/me/admin/activity/list",
+    "pages/me/admin/activity/detail",
+    "pages/me/admin/activity/edit",
+    "pages/auth/auth"
+  ],
+  "window": {
+    "enablePullDownRefresh": true,
+    "navigationBarBackgroundColor": "#39b54a",
+    "navigationBarTitleText": "OnlyU",
+    "navigationStyle": "custom",
+    "navigationBarTextStyle": "white"
+  },
+  "usingComponents": {
+    "cu-custom": "/colorui/components/cu-custom"
+  },
+  "debug": true,
+  "sitemapLocation": "sitemap.json"
+}

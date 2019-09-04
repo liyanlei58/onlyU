@@ -1,0 +1,203 @@
+<cu-custom bgColor="bg-gradual-{{skin}}" isBack="{{true}}">
+  <view slot="backText">返回</view>
+  <view slot="content">馥钰主页</view>
+</cu-custom>
+
+
+<scroll-view scroll-y="{{modalName==null}}" class="page {{modalName!=null?'show':''}}" bindscroll="scroll" bindscrolltolower="scrollToLower">
+
+  <view class="text-center bg-white padding" wx:if="{{person.avatarUrl}}" bindtap="ViewImage" data-url="{{person.avatarUrl}}">
+    <image src="{{person.avatarUrl}}" mode="aspectFill" class='radius'></image>
+  </view>
+  <view class="cu-list menu">
+
+    <view class="cu-item">
+      <view class="content">
+        <text class="text-lg">馥钰</text>
+        <view class="cu-tag text-cut round bg-orange margin-left-xs">{{person.birthday}}1990</view>
+        <view class="cu-tag text-cut round bg-pink margin-left-xs">{{person.job}}销售</view>
+        <view class="cu-tag text-cut round bg-green">166cm</view>
+        <text class="margin-left text-red">V</text>
+      </view>
+
+      <view class="action g">
+        <text class="text-brown">期望一年内结婚</text>
+      </view>
+    </view>
+
+    <view class="cu-item">
+      <view class="content">
+
+        <view class="cu-tag round bg-yellow">金牛座</view>
+        <view class="cu-tag round bg-olive">20K-30K</view>
+        <view class="cu-tag round bg-red">有房</view>
+        <view class="cu-tag round bg-cyan">有车</view>
+      </view>
+
+      <view class="action g">
+        <text class="text-brown">大望路</text>
+      </view>
+    </view>
+
+    <view class="cu-item">
+      <view class="content">
+
+        <view class="cu-tag round bg-brown">
+          <!-- {{hometown[0]}}·{{hometown[1]}}·{{hometown[2]}} -->
+          山东·青岛·即墨
+        </view>
+
+      </view>
+
+      <!-- <view class="action g">
+        <text class="text-brown">大望路</text>
+      </view> -->
+    </view>
+
+  </view>
+
+
+
+  <view class="cu-bar bg-white margin-top-sm solid-bottom">
+    <view class="action">
+      <text class="cuIcon-title text-{{skin}}"></text>自我介绍
+    </view>
+  </view>
+
+  <view class="cu-list menu">
+    <view class="cu-item">
+      <view class="content padding-tb-sm text-xl {{textHidden?'text-hidden':''}}">
+        我希望未来尽量能在北京工作，毕竟机会多一些，并非非要在北京定居，如果找到合适的对象，我认为我们在哪里，哪里就是家，房子不代表家，家应该是情感连接的你我！ 我比较实在，也算低调，不善表达，希望遇到一个真诚、乐于沟通交流的人！我个子比较矮，我希望能找个个子高点的，也不用太高！ 感情还是要势均力敌比较长久，不管是精神、物质、外貌、情商、性格等多方面综合因素！ 如果看我资料的人，能接受这样的我，请联系，诚意征婚，不需要您太优秀，能陪我踏实生活就好！ 不懂什么是爱情，如果两个人在一起后，彼此都变得更好(为人处世、沟通表达、生活更丰富、不再迷茫等等)，这便是遇到了那个
+        right person
+        <text class="text-blue" bindtap="textShow">收起</text>
+      </view>
+      <view class="action {{textHidden?'':'hide'}}">
+        <text class="text-blue" bindtap="textShow">全文</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="cu-bar bg-white margin-top-sm solid-bottom">
+    <view class="action">
+      <text class="cuIcon-title text-{{skin}}"></text>扩展信息
+    </view>
+  </view>
+  <view class="padding bg-white">
+    <view class="flex">
+      <view class="flex-sub text-{{skin}} margin-xs">真实姓名</view>
+      <view class="flex-four margin-xs">{{person.realName}}海清</view>
+    </view>
+    <view class="flex">
+      <view class="flex-sub text-{{skin}} margin-xs">定居</view>
+      <view class="flex-four margin-xs">{{person.settle}}北京</view>
+    </view>
+    <view class="flex">
+      <view class="flex-sub text-{{skin}} margin-xs">爱好</view>
+      <view class="flex-four margin-xs">{{person.hobby}}读书</view>
+    </view>
+  </view>
+
+  <view class="cu-bar bg-white margin-top-sm solid-bottom">
+    <view class="action">
+      <text class="cuIcon-title text-{{skin}}"></text>择偶要求
+    </view>
+  </view>
+  <view class="padding bg-white">
+    <view class="flex">
+      <view class="flex-sub text-{{skin}} margin-xs">年龄</view>
+      <view class="flex-four margin-xs">18岁以上</view>
+    </view>
+    <view class="flex">
+      <view class="flex-sub text-{{skin}} margin-xs">工作地点</view>
+      <view class="flex-four margin-xs">北京</view>
+    </view>
+    <view class="flex">
+      <view class="flex-sub text-{{skin}} margin-xs">身高</view>
+      <view class="flex-four margin-xs">175左右</view>
+    </view>
+    <view class="flex">
+      <view class="flex-sub text-{{skin}} margin-xs">收入</view>
+      <view class="flex-four margin-xs">20k以上</view>
+    </view>
+    <view class="flex">
+      <view class="flex-sub text-{{skin}} margin-xs">籍贯</view>
+      <view class="flex-four margin-xs">不限</view>
+    </view>
+  </view>
+
+  <view class="cu-bar bg-white margin-top-sm solid-bottom">
+    <view class="action">
+      <text class="cuIcon-title text-{{skin}}"></text>生活动态
+    </view>
+    <view class="action text-grey" bindtap="toDynamic"  data-openid="13dba11c5d2d35ee086e896b56e564ab">
+      查看更多 >
+    </view>
+  </view>
+  <view class="cu-card dynamic {{isCard?'no-card':''}}">
+    <view class="cu-item shadow">
+      <view class="cu-list dynamic menu-avatar comment ">
+        <view class="cu-item">
+          <view class="cu-avatar round" style="background-image:url(https://ossweb-img.qq.com/images/lol/img/champion/Morgana.png);"></view>
+          <view class="content">
+            <view class="text-gray">馥钰
+              <view class="right-top-zero">2019-08-21</view>
+            </view>
+            <view class="text-content text-df">
+              凯尔，你被自己的光芒变的盲目。
+            </view>
+
+            <view class="grid flex-sub col-3 grid-square">
+              <view class="bg-img" style="background-image:url(https://sjbz-fd.zol-img.com.cn/t_s320x510c/g5/M00/0F/06/ChMkJltRVImIW2zlAAHXjFLKAuwAAp4IwJkrCwAAdek616.jpg);" wx:for="{{modalName!=null?9:1}}" wx:key="{{index}}">
+              </view>
+            </view>
+
+            <view class="margin-top-sm text-gray">
+              <text class="cuIcon-appreciatefill text-red"></text> 8
+              <text class="cuIcon-messagefill text-gray margin-left-sm"></text> 9
+            </view>
+
+            <view class="bg-gray padding-sm radius margin-top-sm  text-sm">
+              <view class="flex">
+                <view class="text-grey text-df">凯尔：</view>
+                <view class="flex-sub">妹妹，你在帮他们给黑暗找借口吗?</view>
+              </view>
+            </view>
+
+          </view>
+        </view>
+        <view class="cu-item">
+          <view class="cu-avatar round" style="background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big10006.jpg);"></view>
+          <view class="content">
+            <view class="text-gray">馥钰
+              <view class="right-top-zero">2019-08-21</view>
+            </view>
+            <view class="text-content text-df">
+              妹妹，如果不是为了飞翔，我们要这翅膀有什么用?
+            </view>
+
+            <view class="grid flex-sub col-3 grid-square">
+              <view class="bg-img" style="background-image:url(https://sjbz-fd.zol-img.com.cn/t_s320x510c/g5/M00/0F/06/ChMkJ1tRVIyIFCYzAALE_K5nOeUAAp4IwJ3ieUAAsUU601.jpg);" wx:for="{{modalName!=null?5:1}}" wx:key="{{index}}">
+              </view>
+            </view>
+
+            <view class="margin-top-sm text-gray">
+              <text class="cuIcon-appreciatefill text-red"></text> 8
+              <text class="cuIcon-messagefill text-gray margin-left-sm"></text> 9
+            </view>
+
+            <view class="bg-gray padding-sm radius margin-top-sm  text-sm">
+              <view class="flex">
+                <view class="text-grey text-df">莫甘娜：</view>
+                <view class="flex-sub">如果不能立足于大地，要这双脚又有何用?</view>
+              </view>
+            </view>
+
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+
+
+</scroll-view>

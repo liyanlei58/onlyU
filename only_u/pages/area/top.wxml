@@ -1,0 +1,10 @@
+<cu-custom bgColor="bg-gradual-pink" isBack="{{true}}">
+  <view slot="backText">返回</view>
+  <view slot="content">XXXX专区置顶</view>
+</cu-custom>
+
+<view class="padding-sm" >
+  <view class="bg-yellow padding radius text-center shadow-blur">
+    <view class="text-lg">XXXX专区置顶 - 待开发</view>
+  </view>
+</view>

@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+    "home": "/pages/home/home",
+    "apply": "/pages/apply/activityList",
+    "seek": "/pages/seek/index",
+    "dynamic": "/pages/dynamic/list",
+    "chat": "/pages/chat/index",
+    "me": "/pages/me/index"
+  }
+}

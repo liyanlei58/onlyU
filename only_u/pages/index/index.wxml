@@ -1,0 +1,53 @@
+<home wx:if="{{PageCur=='home'}}"></home>
+<apply wx:if="{{PageCur=='apply'}}"></apply>
+<seek wx:if="{{PageCur=='seek'}}"></seek>
+<dynamic wx:if="{{PageCur=='dynamic'}}"></dynamic>
+<chat wx:if="{{PageCur=='chat'}}"></chat>
+<me wx:if="{{PageCur=='me'}}"></me>
+
+
+<view class="cu-bar tabbar bg-white foot">
+
+  <view class="action" bindtap="NavChange" data-cur="home">
+    <view class='cuIcon-cu-image'>
+    <text class="cuIcon-home{{PageCur=='home'?('fill text-' + skin):' text-gray'}}"></text>
+    </view>
+    <view class="{{PageCur=='home'?('text-' + skin):'text-gray'}}">首页</view>
+  </view>
+<!-- 
+  <view class="action" bindtap="NavChange" data-cur="apply">
+    <view class='cuIcon-cu-image'>
+    <text class="cuIcon-selection{{PageCur=='apply'?('fill text-' + skin):' text-gray'}}"></text>
+    </view>
+    <view class="{{PageCur=='apply'?('text-' + skin):'text-gray'}}">报名</view>
+  </view> -->
+
+  <view class="action" bindtap="NavChange" data-cur="seek">
+    <view class='cuIcon-cu-image'>
+    <text class="cuIcon-we{{PageCur=='seek'?('fill text-' + skin):' text-gray'}}"></text>
+    </view>
+    <view class="{{PageCur=='seek'?('text-' + skin):'text-gray'}}">寻缘</view>
+  </view>
+
+  <view class="action" bindtap="NavChange" data-cur="dynamic">
+    <view class='cuIcon-cu-image'>
+      <text class="cuIcon-like{{PageCur=='dynamic'?('fill text-' + skin):' text-gray'}}"></text>
+    </view>
+    <view class="{{PageCur=='dynamic'?('text-' + skin):'text-gray'}}">爱琴海</view>
+  </view>
+
+  <view class="action" bindtap="NavChange" data-cur="chat">
+    <view class='cuIcon-cu-image'>
+      <text class="cuIcon-message{{PageCur=='chat'?('fill text-' + skin):' text-gray'}}"></text>
+    </view>
+    <view class="{{PageCur=='chat'?('text-' + skin):'text-gray'}}">聊天</view>
+  </view>
+
+  <view class="action" bindtap="NavChange" data-cur="me">
+    <view class='cuIcon-cu-image'>
+      <text class="cuIcon-people{{PageCur=='me'?('fill text-' + skin):' text-gray'}}"></text>
+    </view>
+    <view class="{{PageCur=='me'?('text-' + skin):'text-gray'}}">我的</view>
+  </view>
+
+</view>

@@ -1,0 +1,56 @@
+<block wx:if="{{showLoading}}">
+  <view class='cu-load load-modal'>
+    <view class='cuIcon-loading2 text-{{skin}}'></view>
+    <view class='text-{{skin}}'>玩命加载中...</view>
+  </view>
+</block>
+<block wx:else>
+
+  <cu-custom bgColor="bg-gradual-{{skin}}" isBack="{{true}}">
+    <view slot="backText">返回</view>
+    <view slot="content">消息中心</view>
+  </cu-custom>
+
+
+  <!-- 互相打分的人员 -->
+  <scroll-view scroll-y="{{modalName==null}}" class="margin-top bg-white solid-top page {{modalName!=null?'show':''}}" bindscroll="scroll" bindscrolltolower="scrollToLower">
+
+    <view class="cu-list menu">
+      <view class="cu-item {{modalName=='move-box-'+ index?'move-cur':''}}" wx:for="{{messageList}}" wx:key="{{index}}" bindtouchstart="ListTouchStart" bindtouchmove="ListTouchMove" bindtouchend="ListTouchEnd" data-id="{{item._openid}}" data-title="{{item.message._id}}">
+
+        <view class="cu-avatar radius lg " bindtap="toPersonInfo">
+          <image src="{{item.photoId}}" mode="aspectFill" class='cu-avatar radius lg'></image>
+          <!-- <view class="cu-tag badge {{item.gender % 2 == 0 ? 'cuIcon-female bg-pink' : 'cuIcon-male bg-blue'}}"></view> -->
+        </view>
+
+        <view class="content padding-left-sm" bindtap="toDynamicDetail" data-type="{{item.type}}" data-id="{{item.id}}">
+          <view class="flex flex-wrap">
+            <view class="basis-xl">{{item.nickName}}{{item.title}}</view>
+            <view class="">{{item.createTime}}</view>
+          </view>
+          <view class="text-df text-gray">{{item.content}}</view>
+        </view>
+
+        <!-- <view class="move">
+          <view class="bg-red">删除</view>
+        </view> -->
+      </view>
+
+      <!-- hasMore start -->
+      <view class='margin-tb'>
+        <block wx:if="{{hasMore}}">
+          <view class='cu-load'>
+            <view class='text-{{skin}}'>玩命加载中...</view>
+          </view>
+        </block>
+        <block wx:else>
+          <view class="flex justify-center text-gray">
+            <text>没有更多内容了</text>
+          </view>
+        </block>
+      </view>
+      <!-- hasMore end -->
+    </view>
+  </scroll-view>
+
+</block>

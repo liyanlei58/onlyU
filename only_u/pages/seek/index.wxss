@@ -1,0 +1,24 @@
+.area {
+  top: 0rpx;
+  height: 705rpx; 
+  width: 700rpx; 
+}
+
+.mv {
+  height: 705rpx; 
+  width: 700rpx; 
+  /* background:#000; */
+  background:rgba(0,0,0,0); 
+}
+
+.section {
+  height: 865rpx;
+  width: 700rpx;  
+}
+
+
+.image {
+  position:relative;
+  width: 100%; 
+  height: 705rpx; 
+}

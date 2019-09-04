@@ -1,0 +1,132 @@
+<block wx:if="{{showLoading}}">
+  <view class='cu-load load-modal'>
+    <view class='cuIcon-loading2 text-{{skin}}'></view>
+    <view class='text-{{skin}}'>玩命加载中...</view>
+  </view>
+</block>
+<block wx:else>
+  <cu-custom bgColor="bg-gradual-{{skin}}" isBack="{{true}}">
+    <view slot="backText">返回</view>
+    <view slot="content">XXXX - 专区</view>
+  </cu-custom>
+
+  <scroll-view scroll-y="{{modalName==null}}" class="page {{modalName!=null?'show':''}} margin-bottom-xxl" bindscroll="scroll" bindscrolltolower="scrollToLower">
+    <view class="bg-white">
+      <view class="cu-bar">
+        <view class="action">
+          <text class="cuIcon-choicenessfill text-pink"></text> 置顶推荐
+        </view>
+        <view class="action text-grey text-lg" bindtap="toTop">
+          我要置顶
+          <text class="margin-left"> > </text>
+        </view>
+      </view>
+
+      <view class="cu-card case bg-white">
+        <view class="cu-item margin-lr">
+          <swiper class="screen-swiper square-dot" indicator-dots="true" indicator-color="#e07382" indicator-active-color="#e54d42" circular="true" autoplay="true" interval="5000" duration="500">
+            <swiper-item wx:for="{{swiperList}}" wx:key bindtap="toPersonInfo" data-openid="13dba11c5d2d35ee086e896b56e564ab">
+              <image src="{{item.url}}" mode="aspectFill" wx:if="{{item.type=='image'}}"  ></image>
+              <view class="left-top-sm round cu-tag bg-mauve">馥钰</view>
+              <view class="right-top-sm round cu-tag bg-red">9999关注</view>
+              <view class="left-bottom-sm-xl cu-bar">
+                <view class="cu-tag text-cut round bg-orange">28岁</view>
+                <view class="cu-tag text-cut round bg-orange">高收入</view>
+                <view class="cu-tag round bg-yellow">高学历</view>
+                <view class="cu-tag round bg-olive">有房</view>
+                <view class="cu-tag round bg-cyan">有车</view>
+              </view>
+              <!-- <view class="right-bottom-sm-xl round cu-tag bg-mauve margin-bottom">
+                <text class="cuIcon-weixin text-green lg margin-right-xs "></text>查看微信</view> -->
+            </swiper-item>
+          </swiper>
+        </view>
+      </view>
+    </view>
+
+    <view class="margin-top-sm padding-bottom">
+      <view class="cu-bar bg-white">
+        <view class="action">
+          <text class="cuIcon-selectionfill text-pink  "></text> 每日推荐
+        </view>
+      </view>
+
+      <view class="margin-lr cu-card case {{isCard?'no-card':''}}">
+        <view wx:for="{{swiperList}}" wx:key class="cu-item shadow shadow-lg margin-top" bindtap="toPersonInfo" data-openid="13dba11c5d2d35ee086e896b56e564ab" >
+          <view class="image">
+            <image src="{{item.url}}" mode="widthFix"></image>
+            <!-- <view class="right-bottom round cu-tag bg-mauve">
+              <text class="cuIcon-weixin text-green lg margin-right-xs "></text>查看微信</view> -->
+
+          </view>
+          <view class="cu-list menu">
+            
+            <view class="cu-item">
+              <view class="content">
+                <text class="text-lg">馥钰</text>
+                <view class="cu-tag text-cut round bg-orange margin-left-xs">28岁</view>
+                <view class="cu-tag text-cut round bg-orange">166cm</view>
+                  <text class="margin-left text-red">V</text>
+              </view>
+
+              <view class="action g">
+<text class="text-brown">期望一年内结婚</text>
+              </view>
+            </view>
+
+            <view class="cu-item">
+              <view class="content">
+                
+                <view class="cu-tag round bg-yellow">金牛座</view>
+                <view class="cu-tag round bg-olive">20K-25K</view>
+                <view class="cu-tag round bg-olive">有房</view>
+                <view class="cu-tag round bg-cyan">有车</view>
+              </view>
+
+              <view class="action g">
+<text class="text-brown">大望路</text>
+              </view>
+            </view>
+
+            <view class="cu-item">
+              <view class="content padding-tb-sm text-xl {{textHidden?'text-hidden':''}}">
+                我希望未来尽量能在北京工作，毕竟机会多一些，并非非要在北京定居，如果找到合适的对象，我认为我们在哪里，哪里就是家，房子不代表家，家应该是情感连接的你我！
+我比较实在，也算低调，不善表达，希望遇到一个真诚、乐于沟通交流的人！我个子比较矮，我希望能找个个子高点的，也不用太高！
+感情还是要势均力敌比较长久，不管是精神、物质、外貌、情商、性格等多方面综合因素！
+如果看我资料的人，能接受这样的我，请联系，诚意征婚，不需要您太优秀，能陪我踏实生活就好！
+不懂什么是爱情，如果两个人在一起后，彼此都变得更好(为人处世、沟通表达、生活更丰富、不再迷茫等等)，这便是遇到了那个 right person <text class="text-blue" catchtap="textShow">收起</text>
+              </view>
+
+              <view class="action {{textHidden?'':'hide'}}">
+<text class="text-blue" catchtap="textShow">全文</text>
+              </view>
+            </view>
+
+          </view>
+        </view>
+
+      </view>
+
+    </view>
+
+
+
+
+
+    <!-- hasMore start -->
+    <view class='padding bg-white'>
+      <block wx:if="{{hasMore}}">
+        <view class='cu-load'>
+          <view class='text-{{skin}}'>玩命加载中...</view>
+        </view>
+      </block>
+      <block wx:else>
+        <view class="flex justify-center text-grey">
+          <text>注册，查看更多</text>
+        </view>
+      </block>
+    </view>
+    <!-- hasMore end -->
+
+  </scroll-view>
+</block>

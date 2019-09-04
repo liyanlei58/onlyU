@@ -1,0 +1,47 @@
+
+  <cu-custom bgColor="bg-gradual-{{skin}}">
+    <view slot="content">聊天</view>
+  </cu-custom>
+
+  <!-- <view class="cu-bar bg-white solid-bottom margin-top">
+    <view class="action">
+      <text class="cuIcon-title text-orange "></text> 消息列表
+    </view>
+  </view> -->
+  <view class="cu-list menu-avatar">
+    <view class="cu-item" bindtap='toChat'>
+      <view class="cu-avatar radius lg" style="background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big10001.jpg);"></view>
+      <view class="content">
+        <view class="text-black">凯尔</view>
+        <view class="text-gray text-sm flex">
+          <text class="text-cut">
+							<text class="cuIcon-infofill text-red  margin-right-xs"></text> 我已天理为凭，踏入这片荒芜，不再受凡人的枷锁遏制。
+          </text>
+        </view>
+      </view>
+      <view class="action">
+        <view class="text-grey text-xs">22:20</view>
+        <view class="cu-tag round bg-grey sm">5</view>
+      </view>
+    </view>
+
+    <view class="cu-item" bindtap='toChat'>
+      <view class="cu-avatar radius lg" style="background-image:url(https://ossweb-img.qq.com/images/lol/img/champion/Taric.png);">
+        <view class="cu-tag badge">99+</view>
+      </view>
+      <view class="content">
+        <view class="text-black">
+          <text class="text-cut">瓦洛兰之盾-塔里克</text>
+          <view class="cu-tag round bg-orange sm">战士</view>
+        </view>
+        <view class="text-gray text-sm flex">
+          <text class="text-cut">塔里克是保护者星灵，用超乎寻常的力量守护着符文之地的生命、仁爱以及万物之美。</text>
+        </view>
+      </view>
+      <view class="action">
+        <view class="text-grey text-xs">22:20</view>
+        <view class="cuIcon-notice_forbid_fill text-gray"></view>
+      </view>
+    </view>
+
+  </view>
